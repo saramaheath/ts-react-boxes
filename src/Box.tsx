@@ -10,8 +10,17 @@
  * BoxList -> Box
  */
 
-function Box({ id, width = 5, height = 5, backgroundColor, remove }) {
+interface IBoxProps {
+  id: number,
+  width: number, 
+  height: number,
+  backgroundColor: string,
+  remove: any
+}
+//
 
+function Box({ id, width = 5, height = 5, backgroundColor, remove }: IBoxProps) {
+  console.log('props', id, width, height, backgroundColor, remove)
   /** Remove a box. */
   function handleRemove() {
     remove(id);

@@ -14,8 +14,8 @@ import { v4 as uuid } from 'uuid';
 
 function NewBoxForm({ createBox }) {
   const [formData, setFormData] = useState({
-    height: "",
-    width: "",
+    height: undefined,
+    width: undefined,
     backgroundColor: "",
   });
 

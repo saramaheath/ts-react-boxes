@@ -13,6 +13,7 @@ function BoxList() {
 
   /** add box with given { id, width, height, backgroundColor } */
   function add(newBox) {
+    console.log('add function', 'newbox', newBox);
     setBoxes(boxes => [...boxes, newBox]);
   }
 
