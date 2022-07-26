@@ -11,15 +11,20 @@
  */
 
 interface IBoxProps {
-  id: number,
-  width: number, 
-  height: number,
+  id: string,
+  width: string | number,
+  height: string | number,
   backgroundColor: string,
-  remove: any
+  remove: (id: string) => void
 }
-//
 
-function Box({ id, width = 5, height = 5, backgroundColor, remove }: IBoxProps) {
+function Box({
+   id,
+   width = 5,
+   height = 5,
+   backgroundColor = 'green',
+   remove }: IBoxProps) {
+
   console.log('props', id, width, height, backgroundColor, remove)
   /** Remove a box. */
   function handleRemove() {

@@ -7,13 +7,18 @@ import NewBoxForm from "./NewBoxForm";
  * State:
  * - boxes: [ { id, width, height, backgroundColor }, ... ]
  */
+interface BoxInterface {
+  id: string,
+  width: string | number,
+  height: string | number,
+  backgroundColor: string,
+}
 
 function BoxList() {
-  const [boxes, setBoxes] = useState([])
+  const [boxes, setBoxes] = useState<BoxInterface[]>([]);
 
   /** add box with given { id, width, height, backgroundColor } */
-  function add(newBox) {
-    console.log('add function', 'newbox', newBox);
+  function add(newBox: BoxInterface) {
     setBoxes(boxes => [...boxes, newBox]);
   }
 
@@ -25,7 +30,7 @@ function BoxList() {
   return (
     <div>
       <NewBoxForm createBox={add} />
-      {boxes.map(({ id, width, height, backgroundColor }) => (
+      {boxes.map(({ id, width, height, backgroundColor }: BoxInterface) => (
         <Box
           key={id}
           id={id}
